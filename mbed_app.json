@@ -1,0 +1,49 @@
+{
+    
+    "config": {
+        "google-cloud-project-id": {
+            "help": "Google cloud project id",
+             "value": "\"tracker-project-341620\""
+        },
+        "google-cloud-region": {
+            "help": "Google cloud region",
+            "value": "\"europe-west1\""
+
+        },
+        "google-cloud-registry": {
+            "help": "Google cloud registry",
+            "value": "\"tracker-project-registry\""
+        },
+        "google-cloud-device-id": {
+            "help": "Google cloud device id",
+            "value": "\"tracker-project-device\""
+        },
+        "google-cloud-mqtt-topic": {
+            "help": "Topic to subscribe & publish to",
+            "value": "\"tracker-project-topic\""
+        }
+
+    },
+    "target_overrides": {
+        "*": {
+            "google-client.iotc-debug-output": false,
+            "platform.stdio-convert-newlines": true,
+            "target.printf_lib": "std",
+            "platform.stdio-baud-rate": 115200
+        },
+        "DISCO_L475VG_IOT01A": {
+            "target.components_add": ["wifi_ism43362"],
+            "target.network-default-interface-type": "WIFI",
+            "nsapi.default-wifi-security": "WPA_WPA2",
+            "nsapi.default-wifi-ssid": "\"Isa\"",
+            "nsapi.default-wifi-password": "\"123123123\""
+        }
+    },
+    "macros": [
+        "IOTC_FS_MEMORY=1",
+        "IOTC_TLS_LIB_MBEDTLS=1",
+        "MBEDTLS_SHA1_C=1",
+        "MBEDTLS_SSL_MAX_CONTENT_LEN=4096",
+        "MBED_CONF_APP_MAIN_STACK_SIZE=4352"
+    ]
+}
