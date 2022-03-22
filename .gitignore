@@ -5,3 +5,5 @@ mbed-client-for-google-iot-cloud
 mbed-os
 ntp-client
 wifi-ism43362
+mbed-client-for-google-iot-cloud/iot-device-sdk-embedded-c
+mbed-os-ble-utils
